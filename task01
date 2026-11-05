@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+    int balance[5]={15000,25000,18000,32000,12000};
+    int *p;
+    p=&balance[0];
+    printf("balance value %d\n",*p);
+    printf("memory adrdress %p\n",p);
+    *p=99000;
+    printf("balance value %d\n",*p);
+}
