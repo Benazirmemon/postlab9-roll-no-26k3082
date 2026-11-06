@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+    int branch1[]={15000,23000,32000};
+    int branch2[]={12000,21000,27000,35000};
+    int *branch_pointers[2];
+    branch_pointers[0]=branch1;
+    branch_pointers[1]=branch2;
+    int sizes[]={3,4};
+    for(int i=0;i<2;i++){
+        printf("branch %d address %p\n",i+1,branch_pointers[i]);
+        int  total=0;
+    for(int j=0;j<sizes[i];j++){
+        int balance=*(branch_pointers[i]+j);
+        printf("%d\n",balance);
+        total+=balance;
+        
+    } 
+        printf("total balance of branch %d %d\n\n",i+1,total);
+    }
+}
