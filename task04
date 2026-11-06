@@ -1,0 +1,17 @@
+#include<stdio.h>
+int calculatetotal(int *p,int size){
+    int total=0;
+    for(int j=0;j<size;j++){
+    total+=*(p+j);
+    }
+    return total;
+}
+int main(){
+    int branch1[]={15000,23000,32000};
+    int branch2[]={12000,21000,27000,35000};
+   int total1=calculatetotal(branch1,3);
+    printf("total balance of branch 1: %d\n",total1);
+     int total2=calculatetotal(branch2,4);
+    printf("total balance of branch 2: %d\n",total2);
+}
+    
