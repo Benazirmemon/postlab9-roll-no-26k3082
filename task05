@@ -1,0 +1,20 @@
+#include<stdio.h>
+int deposit(int balance,int amount)
+{
+  return balance+amount;
+}
+int withdraw(int balance,int amount)
+{
+  return balance-amount;
+}
+int main(){
+  int balance=5000;
+  int (*op)(int,int);
+  op=deposit;
+  balance=op(balance,1000);
+  printf("after deposit balance: %d\n",balance);
+  op=withdraw;
+  balance=op(balance,1000);
+  printf("after withdraw balance: %d\n",balance);
+  
+}
