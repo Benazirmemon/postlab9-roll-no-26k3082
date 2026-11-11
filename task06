@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+
+int deposit(int balance, int amount);
+int withdraw(int balance, int amount);
+
+
+int processTransaction(int balance, int amount, int (*operation)(int, int));
+    
+
+int main() {
+    int currentBalance = 1000;
+    int transactionAmount = 250;
+
+    printf("Initial Balance: %d\n", currentBalance);
+
+
+    currentBalance = processTransaction(currentBalance, transactionAmount, deposit);
+    printf("Balance after depositing %d: %d\n", transactionAmount, currentBalance);
+
+   
+    currentBalance = processTransaction(currentBalance, transactionAmount, withdraw);
+    printf("Balance after withdrawing %d: %d\n", transactionAmount, currentBalance);
+
+    return 0;
+}
+
+int deposit(int balance, int amount) {
+    return balance + amount;
+}
+
+int withdraw(int balance, int amount) {
+    if (amount > balance) {
+        printf("Insufficient");
+        return balance;
+    }
+    return balance - amount;
+}
+int processTransaction(int balance, int amount, int (*operation)(int, int)) {
+    
+    return operation(balance, amount);
+}
+  
